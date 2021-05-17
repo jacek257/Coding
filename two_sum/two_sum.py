@@ -3,11 +3,10 @@
 You may assume that each input would have exactly one solution, and you may not use the same element twice."""
 
 class Solution:
-    def twoSum(self, nums, target):
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         index = {}
-        for i in range(len(nums)):
-            num = nums[i]
+        for i, num in enumerate(nums):
             other = target - num
-            if other in index.keys():
-                return [i, other]
+            if other in index:
+                return [i, index[other]]
             index[num] = i
